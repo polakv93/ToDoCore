@@ -1,0 +1,17 @@
+﻿@model ToDoCore.ViewModel.TaskViewModel
+
+@{
+    ViewBag.Title = "Create new task";
+    Layout = "_Layout";
+}
+
+<h2>Create new task</h2>
+
+@using (Html.BeginForm("Create", "Task", FormMethod.Post))
+{
+    @Html.DisplayNameFor(x => x.Description)
+    @Html.EditorFor(x => x.Description)
+    @Html.ValidationMessageFor(x => x.Description)
+
+    <input type="submit" value="Add"/>
+}
