@@ -32,7 +32,7 @@ namespace ToDoCore
             // Add framework services.
             services.AddMvc();
 
-            const string connection = @"Server=(localdb)\mssqllocaldb;Database=Database;Trusted_Connection=True;";
+            const string connection = @"Server=(localdb)\mssqllocaldb;Database=TodoCoreDatabase;Trusted_Connection=True;";
             services.AddDbContext<TaskContext>(options => options.UseSqlServer(connection));
         }
 

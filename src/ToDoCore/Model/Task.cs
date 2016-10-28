@@ -6,7 +6,7 @@ namespace ToDoCore.Model
     {
         public int TaskId { get; set; }
         public string Description { get; set; }
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool IsActive { get; set; }
     }
 }
