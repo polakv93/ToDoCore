@@ -8,9 +8,10 @@ using ToDoCore.Model;
 namespace ToDoCore.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    partial class TaskContextModelSnapshot : ModelSnapshot
+    [Migration("20161028205817_change Task.Done to Task.IsActive")]
+    partial class changeTaskDonetoTaskIsActive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")

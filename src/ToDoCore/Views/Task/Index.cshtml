@@ -1,0 +1,21 @@
+﻿@model System.Collections.Generic.List<ToDoCore.Model.Task>
+
+@{
+    ViewBag.Title = "Tasks";
+    Layout = "_Layout";
+}
+
+
+
+
+<h2>Tasks</h2>
+
+
+<ul>
+    @foreach (var task in Model)
+    {
+        <li>
+           @task.Description
+        </li>
+    }
+</ul>
