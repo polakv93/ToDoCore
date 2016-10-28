@@ -1,6 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ToDoCore.Model;
 using ToDoCore.ViewModel;
 
@@ -18,6 +18,8 @@ namespace ToDoCore.Controllers
         public IActionResult Index()
         {
             var tasks = _context.Tasks.Where(t => t.IsActive).ToList();
+            var viewTasks = new List<TaskViewModel>();
+            tasks.ForEach(t => viewTasks.Add(new TaskViewModel(t)));
             return View(tasks);
         }
 
