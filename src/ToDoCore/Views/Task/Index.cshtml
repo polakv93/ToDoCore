@@ -11,11 +11,18 @@
 <h2>Tasks</h2>
 
 
-<ul>
-    @foreach (var task in Model)
-    {
-        <li>
-           @task.Description
-        </li>
-    }
-</ul>
+<div>
+    <ul class="tasks-list">
+        @foreach (var task in Model)
+        {
+            <li>
+                <div class="task-container">
+                    <div class="description-container">@task.Description</div>
+                    <div class="actions-container">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

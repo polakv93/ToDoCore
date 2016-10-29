@@ -36,3 +36,26 @@ textarea {
     display: none
   }
 }
+
+
+.description-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: orange;
+    round-clip: 4px;
+    width: border-box;
+    padding: 5px;
+}
+
+.actions-container {
+    width: min-content;
+}
+
+.tasks-list {
+    list-style: none;
+}
+
+.task-container {
+    width: min-content;
+    min-width: 300px;
+}
