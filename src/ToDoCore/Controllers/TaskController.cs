@@ -20,7 +20,7 @@ namespace ToDoCore.Controllers
             var tasks = _context.Tasks.Where(t => t.IsActive).ToList();
             var viewTasks = new List<TaskViewModel>();
             tasks.ForEach(t => viewTasks.Add(new TaskViewModel(t)));
-            return View(tasks);
+            return View(viewTasks);
         }
 
         public IActionResult Create()
