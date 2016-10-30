@@ -8,8 +8,10 @@ namespace ToDoCore.ViewModel
         public TaskViewModel(Task task)
         {
             Description = task.Description;
+            TaskId = task.TaskId;
         }
 
         public string Description { get; set; }
+        public int TaskId { get; set; }
     }
 }

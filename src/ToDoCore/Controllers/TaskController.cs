@@ -38,5 +38,15 @@ namespace ToDoCore.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Complete(int id)
+        {
+            var task = _context.Tasks.FirstOrDefault(t => t.TaskId == id);
+            if (task != null && task.IsActive)
+                task.IsActive = false;
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

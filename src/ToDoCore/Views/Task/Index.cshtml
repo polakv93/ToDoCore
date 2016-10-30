@@ -19,7 +19,10 @@
                 <div class="task-container">
                     <div class="description-container">@task.Description</div>
                     <div class="actions-container">
-                        <span class="glyphicon glyphicon-ok"></span>
+                        <a asp-area="" asp-controller="Task" asp-action="Index" class="navbar-brand">ToDoCore</a>
+                        <a asp-area="" asp-controller="Task" asp-action="Complete" asp-route-id="@task.TaskId">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>                        
                     </div>
                 </div>
             </li>
