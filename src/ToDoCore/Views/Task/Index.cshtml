@@ -5,29 +5,30 @@
     Layout = "_Layout";
 }
 
-
-
-
 <h2>Tasks</h2>
 
-<a asp-area="" asp-controller="Task" asp-action="Create">
-    <span class="glyphicon glyphicon-plus-sign"></span>
-</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@task.Description</td>
+            <td>
+                <a asp-controller="Task" asp-action="Complete" asp-route-id="@task.TaskId">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
 
-<div>
-    <ul class="tasks-list">
-        @foreach (var task in Model)
-        {
-            <li>
-                <div class="task-container">
-                    <div class="description-container">@task.Description</div>
-                    <div class="actions-container">
-                        <a asp-area="" asp-controller="Task" asp-action="Complete" asp-route-id="@task.TaskId">
-                            <span class="glyphicon glyphicon-ok"></span>
-                        </a>                        
-                    </div>
-                </div>
-            </li>
-        }
-    </ul>
-</div>
+<a asp-area="" asp-controller="Task" asp-action="Create">
+    <span class="glyphicon glyphicon-plus-sign btn-lg"></span>
+</a>

@@ -5,6 +5,10 @@ namespace ToDoCore.ViewModel
 {
     public class TaskViewModel
     {
+        public TaskViewModel()
+        {
+        }
+
         public TaskViewModel(Task task)
         {
             Description = task.Description;
